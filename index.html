@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>SRLAB Careers</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #246bfd;
+      --primary-gradient: linear-gradient(135deg, #246bfd 70%, #0ecaf9 100%);
+      --bg: #f4f6f8;
+      --logo-bg: linear-gradient(135deg, #246bfd 70%, #0ecaf9 100%);
+      --logo-shadow: 0 2px 30px rgba(20, 107, 253, 0.25);
+      --text-accent: #1962d9;
+      --card-bg: #fff;
+      --border-color: #e6eafe;
+    }
+
+    body {
+      background: var(--bg);
+      color: #202834;
+      margin: 0;
+      font-family: 'Inter', Arial, Helvetica, sans-serif;
+      font-size: 17px;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 900px;
+      margin: 40px auto 55px auto;
+      background: var(--card-bg);
+      border-radius: 18px;
+      box-shadow: 0 4px 20px rgba(36, 107, 253, 0.08);
+      padding: 40px 16px 32px 16px;
+      display: flex;
+      flex-direction: column;
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 22px;
+    }
+    .logo-circle {
+      background: var(--logo-bg);
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.5em;
+      color: #fff;
+      user-select: none;
+      box-shadow: var(--logo-shadow);
+    }
+    .header-title {
+      font-size: 2em;
+      font-weight: 700;
+      color: var(--text-accent);
+      white-space: nowrap;
+      user-select: none;
+    }
+    .about-lab {
+      background: #e7f0fd;
+      border-left: 5px solid var(--text-accent);
+      padding: 16px 22px;
+      font-size: 1.08em;
+      color: #2a3e66;
+      margin-bottom: 34px;
+      border-radius: 0 13px 13px 0;
+      box-shadow: inset 0 0 6px rgba(25, 98, 217, 0.09);
+    }
+    .section-title {
+      font-size: 1.4em;
+      color: var(--text-accent);
+      font-weight: 700;
+      border-bottom: 2.5px solid #3a7ff6;
+      padding-bottom: 5px;
+      margin-bottom: 18px;
+      text-align: center;
+    }
+
+    .project-label {
+      color: #1e57a2;
+      background: #f6faff;
+      margin: 32px 0 10px 0;
+      border-left: 3.5px solid #1962d9;
+      font-size: 1.07em;
+      padding: 10px 18px;
+      font-weight: 600;
+      border-radius: 0 10px 10px 0;
+      box-shadow: 0 1px 5px rgba(36, 98, 217, 0.04);
+    }
+
+    .jobs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 22px;
+      margin-top: 0;
+    }
+    .job-card {
+      background-color: #f9fbfe;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(36, 107, 253, 0.07);
+      padding: 19px 19px 14px 19px;
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow 0.22s ease;
+      border: 1px solid var(--border-color);
+      min-width: 0;
+      min-height: 0;
+    }
+    .job-card:hover {
+      box-shadow: 0 4px 22px #cfe6fd;
+      border-color: #51a1fc;
+    }
+    .job-title {
+      font-weight: 700;
+      font-size: 1.05em;
+      color: var(--text-accent);
+      letter-spacing: 0.02em;
+      margin-bottom: 7px;
+      margin-top: 0;
+    }
+    .job-flex-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+      margin-bottom: 8px;
+    }
+    .jobflextag {
+      background: #eaf3ff;
+      color: #1d58b2;
+      border-radius: 5px;
+      padding: 3px 16px;
+      font-size: 0.98em;
+      font-weight: 500;
+      margin-bottom: 2px;
+    }
+    .job-label {
+      color: #3c598e;
+      font-weight: 600;
+      margin-right: 6px;
+    }
+    .job-description,
+    .job-qual {
+      font-size: 0.99em;
+      color: #2b3457;
+      margin: 9px 0 5px 0;
+      border-radius: 2px;
+    }
+    .job-qual {
+      background: #f6faff;
+      padding: 6px 8px;
+      margin-bottom: 2px;
+    }
+    .jobs-grid .job-card:last-child {
+      margin-bottom: 0;
+    }
+    .notice-block {
+      margin-top: 34px;
+      background: #f8fafb;
+      border-left: 5px solid #55aaff;
+      border-radius: 7px;
+      padding: 21px 16px 15px 16px;
+      font-size: 1.07em;
+      line-height: 1.68;
+      box-shadow: 0 2px 10px rgba(85,170,255,0.07);
+      text-align: center;
+      color: #274970;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .notice-block .important {
+      font-weight: 600;
+      color: #175bd2;
+    }
+    .notice-block .apply-btn {
+      display: inline-block;
+      margin: 18px 0 12px 0;
+      padding: 10px 34px;
+      background: var(--primary-gradient);
+      color: #fff;
+      border-radius: 20px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.06em;
+      letter-spacing: 0.06em;
+      box-shadow: 0 4px 20px rgba(36, 107, 253, 0.17);
+      transition: background 0.26s, box-shadow 0.26s;
+    }
+    .notice-block .apply-btn:hover {
+      background: linear-gradient(135deg, #1373f9 80%, #00d7fa 110%);
+      box-shadow: 0 10px 32px rgba(21, 158, 255, 0.18);
+      color: #fff;
+    }
+
+    .contact-section {
+  margin: 38px auto 0 auto;
+  padding: 0;
+  background: none;
+  border: none;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 420px;
+}
+.contact-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #e6f0ff;
+  border-radius: 12px;
+  padding: 16px 22px;
+  box-shadow: 0 3px 15px rgba(34, 100, 230, 0.15);
+  color: #1f3f74;
+  font-size: 1rem;
+  user-select: none;
+  width: 100%;
+}
+.contact-avatar {
+  font-size: 2.2rem;
+  background: #1962d9;
+  color: white;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 8px rgba(25, 98, 217, 0.13);
+  flex-shrink: 0;
+}
+.contact-info strong {
+  font-weight: 700;
+  font-size: 1.09rem;
+  margin-bottom: 3px;
+  display: block;
+}
+.contact-info p {
+  margin: 0 0 4px 0;
+  line-height: 1.3;
+}
+.contact-info a {
+  color: #1b59d9;
+  font-weight: 600;
+  text-decoration: none;
+}
+.contact-info a:hover {
+  text-decoration: underline;
+}
+@media (max-width: 700px) {
+  .contact-section { max-width: 99vw }
+  .contact-card { padding: 11px 8px; }
+  .contact-avatar { font-size: 1.6rem; width: 40px; height: 40px; }
+}
+
+    @media (max-width: 700px) {
+      .container { padding: 7vw 2vw 12vw 2vw; }
+      .header-title { font-size: 1.28em; white-space: normal; }
+      .logo-circle { width: 52px; height: 52px; font-size: 1em;}
+      .contact-section { max-width: 99vw }
+    }
+    @media (max-width: 540px) {
+      .about-lab { padding: 7px 2vw 7px 3vw; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="logo-circle" aria-label="SRLAB logo">SR</div>
+      <h1 class="header-title">SRLAB Careers</h1>
+    </header>
+    <section class="about-lab" aria-label="About the Lab">
+      <strong>About the Lab:</strong><br>
+      We are part of the Plant Molecular Department, where our research is dedicated to exploring the molecular mechanisms underlying plant growth and development.
+      Our primary focus areas include the study of microRNAs (miRNAs) in gene regulation, advancements in rice genomics and breeding, and the integration of bioinformatics approaches to accelerate discovery in plant science.
+      The lab brings together interdisciplinary expertise to address key challenges in crop improvement and plant biology.
+    </section>
+
+    <section aria-label="Job Positions" class="position-section">
+      <h2 class="section-title">Project Positions</h2>
+
+      <div class="project-label">
+        Project: Mainstreaming rice landraces diversity in varietal development through genome wide association studies: A model for large-scale utilization of gene bank collections of rice.
+      </div>
+      <div class="jobs-grid" role="list">
+        <div class="job-card" role="listitem" tabindex="0">
+          <div class="job-title">Project Associate 1</div>
+          <div class="job-flex-row">
+            <span class="jobflextag">No. of posts: 1</span>
+            <span class="jobflextag">Salary: 31,000 + 27% HRA</span>
+            <span class="jobflextag">Tenure: Till 04-03-2026</span>
+          </div>
+          <div class="job-qual"><span class="job-label">Minimum qualification:</span>Master's Degree in Natural or Agricultural Sciences / MVSc or Bachelor’s Degree in Engineering or Technology or Medicine from a recognized University or equivalent</div>
+          <div class="job-qual"><span class="job-label">Desirable expertise:</span>Database development, Big data analysis</div>
+        </div>
+        <div class="job-card" role="listitem" tabindex="0">
+          <div class="job-title">Project Scientist 1</div>
+          <div class="job-flex-row">
+            <span class="jobflextag">No. of posts: 1</span>
+            <span class="jobflextag">Salary: 56,000 + 27% HRA</span>
+            <span class="jobflextag">Tenure: Till 04-03-2026</span>
+          </div>
+          <div class="job-qual"><span class="job-label">Minimum qualification:</span>Doctor's degree in Science or Master’s Degree in Engineering or Technology from a recognized university or equivalent</div>
+          <div class="job-qual"><span class="job-label">Desirable expertise:</span>Big data analysis including GWAS, genome assembly, transcriptome analysis, genotyping.</div>
+        </div>
+      </div>
+
+      <div class="project-label" style="margin-top:34px;">
+        Project: ‘MicroRNA mediated regualtion of plant cytoskelton dynamics during plant stress’
+      </div>
+      <div class="jobs-grid" role="list">
+        <div class="job-card" role="listitem" tabindex="0">
+          <div class="job-title">Project Scientist III</div>
+          <div class="job-flex-row">
+            <span class="jobflextag">No. of posts: 1</span>
+            <span class="jobflextag">Salary: Rs. 72,000 + 27% HRA</span>
+            <span class="jobflextag">Tenure: Till 25/9/2027</span>
+          </div>
+          <div class="job-qual"><span class="job-label">Minimum qualification:</span>Doctors degree in Science or Master’s Degree in Engineering or Technology from a recognized university or equivalent and 7 years of experience in R&amp;D</div>
+          <div class="job-qual"><span class="job-label">Desirable expertise:</span>Big data analysis including GWAS, genome assembly, transcriptome analysis, genotyping</div>
+        </div>
+        <div class="job-card" role="listitem" tabindex="0">
+          <div class="job-title">Senior Project Associate</div>
+          <div class="job-flex-row">
+            <span class="jobflextag">No. of posts: 1</span>
+            <span class="jobflextag">Salary: Rs. 42,000 + 27% HRA</span>
+            <span class="jobflextag">Tenure: Till 25/9/2027</span>
+          </div>
+          <div class="job-qual"><span class="job-label">Minimum qualification:</span>Master's Degree in Natural or Agricultural Sciences / MVSc or Bachelor’s Degree in Engineering or Technology or Medicine from a recognized University or equivalent and 4 years of Experience in R&amp;D or Doctors degree in Science or Master’s Degree in Engineering or Technology from a recognized university.</div>
+          <div class="job-qual"><span class="job-label">Desirable expertise:</span>Database development, Big data analysis</div>
+        </div>
+        <div class="job-card" role="listitem" tabindex="0">
+          <div class="job-title">Lab Attendant</div>
+          <div class="job-flex-row">
+            <span class="jobflextag">No. of posts: 1</span>
+            <span class="jobflextag">Salary: Rs 27,000/- (consolidated)</span>
+            <span class="jobflextag">Tenure: Till 25/9/2027</span>
+          </div>
+          <div class="job-qual"><span class="job-label">Minimum qualification:</span>10+2</div>
+          <div class="job-qual"><span class="job-label">Desirable expertise:</span>&nbsp;</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="notice-block" role="contentinfo">
+      <div class="important">
+        All posts are of temporary nature and co-terminus with the project sanction dates.
+      </div>
+      <a class="apply-btn" href="https://forms.gle/YOUR_FORM_LINK" target="_blank" rel="noopener noreferrer">
+        CLICK HERE FOR APPLY
+      </a>
+      <div>
+        <strong>Last date for application:</strong> 20/08/2025
+      </div>
+    </div>
+<!-- Add this to your existing HTML just after the notice-block, replacing the old contact-section -->
+
+<div class="contact-section">
+    <div class="contact-card">
+      <div class="contact-avatar" aria-hidden="true">👤</div>
+      <div class="contact-info">
+        <strong>Contact Person</strong>
+        <p>Prof. Saurabh Raghuvanshi</p>
+        <p>Principal Investigator</p>
+        <p>Email: <a href="mailto:saurabh@genomeindia.org">saurabh@genomeindia.org</a></p>
+      </div>
+    </div>
+  </div>
+  </div>
+</body>
+</html>
